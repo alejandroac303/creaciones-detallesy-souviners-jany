@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización — Creaciones, Detalles y Souvenirs Jany</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff9fc;
+            color: #4a1a3c;
+            font-family: Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* CABECERA */
+        .cabecera {
+            background-color: #fcdde6;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 75px;
+        }
+
+        .menu a {
+            margin-left: 25px;
+            color: #8b2a5c;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .contenedor-principal {
+            max-width: 900px;
+            margin: 140px auto 80px auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        /* IMAGEN DE COTIZACIÓN */
+        .lado-imagen {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 113px;
+        }
+
+        .lado-imagen img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* FORMULARIO */
+        .lado-formulario {
+            flex: 1;
+            min-width: 300px;
+            margin-top: 25px;
+        }
+
+        .lado-formulario h1 {
+            text-align: center;
+            font-size: 28px;
+            color: #8b1a60;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #e0b6c8;
+            border-radius: 4px;
+            background: #fff;
+            font-size: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            width: 100%;
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff4fa7;
+        }
+
+        /* PIE DE PAGINA */
+        .pie {
+            background-color: #8b2a5c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 15px;
+            width: 100%;
+        }
+
+        /* ADAPTACION PARA CELULARES */
+        @media (max-width: 768px) {
+            .contenedor-principal {
+                flex-direction: column;
+                margin: 80px auto 40px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU PRINCIPAL -->
+    <div class="cabecera">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Jany">
+        </div>
+
+        <div class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="historia.html">Historia</a>
+            <a href="cotizacion.html">Cotización</a>
+            <a href="contactenos.html">Contáctenos</a>
+        </div>
+    </div>
+
+    <!-- IMAGEN Y FORMULARIO -->
+    <div class="contenedor-principal">
+
+        <div class="lado-imagen">
+            <img src="img/cotizacion.png" alt="Cotización Jany">
+        </div>
+
+        <div class="lado-formulario">
+            <h1>Solicitar Cotización</h1>
+
+            <form>
+                <label for="nombre">Tu Nombre</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Escribe tu nombre"
+                    required
+                >
+
+                <label for="evento">Tipo de Evento</label>
+                <select id="evento" name="evento" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="boda">Boda</option>
+                    <option value="xv">XV Años</option>
+                    <option value="bautizo">Bautizo</option>
+                    <option value="cumple">Cumpleaños</option>
+                    <option value="otro">Otro evento</option>
+                </select>
+
+                <label for="detalles">
+                    Cuéntanos lo que necesitas
+                </label>
+
+                <textarea
+                    id="detalles"
+                    name="detalles"
+                    rows="4"
+                    placeholder="¿Qué te gustaría crear? ¡Cuéntanos los detalles!"
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Enviar Solicitud ✨
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PIE DE PAGINA -->
+    <div class="pie">
+        © 2026 Creaciones, Detalles y Souvenirs Jany —
+        Hecho con amor ❤️
+    </div>
+
+</body>
+</html>

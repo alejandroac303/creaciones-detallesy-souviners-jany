@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería | Creaciones Jany</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: serif;
+        }
+
+        body {
+            background-color: #fff5f8;
+            color: #5a2040;
+        }
+
+        header {
+            background-color: #fdd9e4;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            height: 70px;
+        }
+
+        nav a {
+            color: #802b54;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 17px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #802b54;
+            margin: 30px 0;
+            font-size: 28px;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 20px;
+            flex-wrap: wrap;
+        }
+
+        .carrito img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .whatsapp {
+            background: #802b54;
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+        }
+
+        .galeria {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(128,43,84,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .producto:hover {
+            transform: translateY(-5px);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #fff9fc;
+            cursor: pointer;
+        }
+
+        .producto h3 {
+            color: #802b54;
+            margin-bottom: 8px;
+            font-size: 19px;
+        }
+
+        .precio {
+            font-size: 20px;
+            font-weight: bold;
+            color: #802b54;
+            margin-bottom: 12px;
+        }
+
+        .producto p {
+            color: #5a2040;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .cantidad {
+            width: 65px;
+            padding: 8px;
+            margin-top: 8px;
+            border: 1px solid #fdd9e4;
+            border-radius: 6px;
+        }
+
+        .agregar {
+            background: #802b54;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .resumen {
+            background: #fdd9e4;
+            text-align: center;
+            padding: 25px;
+            margin: 25px;
+            border-radius: 12px;
+        }
+
+        .resumen button {
+            background: #802b54;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .imagen-grande {
+            display: none;
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .imagen-grande img {
+            max-width: 90%;
+            max-height: 85%;
+        }
+
+        .cerrar {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .derechos {
+            text-align: center;
+            padding: 25px;
+            color: #802b54;
+            font-size: 14px;
+            border-top: 1px solid #fdd9e4;
+            margin-top: 40px;
+        }
+
+        @media(max-width:600px) {
+            header {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .galeria {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="img/logo.png" alt="Creaciones Jany" class="logo">
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="galeria.html">Galería</a>
+        <a href="galeria2.html">Galería 2</a>
+    </nav>
+</header>
+
+<h1>NUESTROS CENTRO DE MESA Y PLANTILLA </h1>
+
+<div class="botones">
+    <a href="compra.html" class="carrito">
+        <img src="img/compra.png" alt="Carrito de compras">
+    </a>
+
+    <a href="https://wa.me/525525394799"
+       class="whatsapp" target="_blank">
+        Contactar por WhatsApp
+    </a>
+</div>
+
+<div class="galeria">
+
+    <div class="producto" data-id="1">
+        <img src="img/imagen 1.png" alt="Centro de Mesa 1" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Aro exterior de 20cm por 20cm y aro interior de 10cm por 15cm, con una mariposa volando en una base plateada con 3 velones y diferentes flores. Centro de Mesa ideal para XV años, Bodas o Evento Especial.</p>
+        <div class="precio">$350.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="2">
+        <img src="img/imagen 2.png" alt="Centro de Mesa 2" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Aro exterior de 20cm por 20cm y aro interior de 10cm por 15cm, con una mariposa volando en una base plateada con 3 velones y diferentes flores. Centro de Mesa ideal para XV años, Bodas o Evento Especial.</p>
+        <div class="precio">$450.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="3">
+        <img src="img/imagen 3.png" alt="Centro de Mesa 3" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Aro de 20 cm por 20 cm con perlas y una mariposa volando con base morada metálica con detalles en metal y flores. Centro de Mesa ideal para XV años o Evento Especial.</p>
+        <div class="precio">$250.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="4">
+        <img src="img/imagen 4.png" alt="Centro de Mesa 4" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Copa de cristal con luces LED con follaje y flores. Centro de Mesa ideal para Boda o Evento Especial.</p>
+        <div class="precio">$450.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="5">
+        <img src="img/imagen 5.png" alt="Centro de Mesa 5" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Aro de 20 cm por 20 cm con perlas y una mariposa volando con base morada metálica con detalles en metal y flores. Centro de Mesa ideal para XV años o Evento Especial.</p>
+        <div class="precio">$350.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="6">
+        <img src="img/imagen 6.png" alt="Centro de Mesa 6" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Copa de Cristal con luces LED, follaje y flores. Centro de Mesa ideal para Bodas.</p>
+        <div class="precio">$400.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="7">
+        <img src="img/imagen 7.png" alt="Centro de Mesa 7" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Vela en una base plateada con flores y follaje. Centro de Mesa ideal para Bodas o Evento Especial.</p>
+        <div class="precio">$350.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="8">
+        <img src="img/imagen 8.png" alt="Centro de Mesa 8" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Plantilla a 12cm a 15 cm con base dorada de 11 cm con flores rosas y nube. Centro de Mesa para XV Años.</p>
+        <div class="precio">$450.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="9">
+        <img src="img/imagen 9.png" alt="Centro de Mesa 9" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Corona plateada con números en dorado con una mariposa con base plateada con una flor blanca y nube. Centro de Mesa para Evento de XV años.</p>
+        <div class="precio">$350.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="10">
+        <img src="img/imagen 10.png" alt="Centro de Mesa 10" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Copa alta delgada con luces LED en rosas moradas y follajes varios con una mariposa plateada y tul rosa claro. Centro de Mesa para XV años.</p>
+        <div class="precio">$350.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="11">
+        <img src="img/imagen 11.png" alt="Centro de Mesa 11" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Aro exterior de 20cm por 20cm y aro interior de 10cm por 15cm, con una mariposa volando en una base plateada con 3 velones y diferentes flores. Centro de Mesa ideal para XV años, Bodas o Evento Especial.</p>
+        <div class="precio">$450.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-id="12">
+        <img src="img/imagen 12.png" alt="Centro de Mesa 12" onclick="abrirImagen(this.src)">
+        <h3>Centro de Mesa</h3>
+        <p>Par de Copas de cristal con perlas y moño. Centro de Mesa para Boda.</p>
+        <div class="precio">$400.00 pesos mexicanos</div>
+        <input class="cantidad" type="number" min="1" value="1">
+        <br>
+        <button class="agregar" onclick="agregar(this)">Agregar al carrito</button>
+    </div>
+
+</div>
+
+<div class="resumen">
+    <h2>Mi pedido</h2>
+    <p id="contador">Productos seleccionados: 0</p>
+    <button onclick="enviarWhatsApp()">Enviar pedido por WhatsApp</button>
+</div>
+
+<div class="imagen-grande" id="cajaImagen" onclick="cerrarImagen()">
+    <span class="cerrar">&times;</span>
+    <img id="imagenAmpliada" src="" alt="Imagen ampliada">
+</div>
+
+<div class="derechos">
+    © 2026 Creaciones Jany — Todos los derechos reservados.
+    <br>
+    Las imágenes son propiedad exclusiva. Prohibida su reproducción sin permiso.
+</div>
+
+<script>
+    const TELEFONO = "525525394799";
+
+    let carrito = JSON.parse(
+        localStorage.getItem("carritoCreacionesJany") || "[]"
+    );
+
+    function guardarCarrito() {
+        localStorage.setItem(
+            "carritoCreacionesJany",
+            JSON.stringify(carrito)
+        );
+    }
+
+    function agregar(boton) {
+        const producto = boton.closest(".producto");
+        const id = producto.dataset.id;
+        const nombre = producto.querySelector("h3").textContent;
+        const cantidad = Number(producto.querySelector(".cantidad").value);
+        const precioTexto = producto.querySelector(".precio").textContent;
+        const precio = parseFloat(precioTexto.replace(/[^0-9.]/g, ''));
+
+        if (!Number.isInteger(cantidad) || cantidad < 1) {
+            alert("Selecciona una cantidad válida.");
+            return;
+        }
+
+        const existente = carrito.find(p => p.id === id);
+
+        if (existente) {
+            existente.cantidad += cantidad;
+        } else {
+            carrito.push({ id, nombre, cantidad, precio });
+        }
+
+        guardarCarrito();
+        actualizarResumen();
+
+        alert("Producto agregado al carrito.");
+    }
+
+    function actualizarResumen() {
+        const total = carrito.reduce(
+            (suma, p) => suma + p.cantidad, 0
+        );
+
+        document.getElementById("contador").textContent =
+            "Productos seleccionados: " + total;
+    }
+
+    function enviarWhatsApp() {
+        if (carrito.length === 0) {
+            alert("Primero agrega productos al carrito.");
+            return;
+        }
+
+        let mensaje = "¡Hola! Quisiera hacer un pedido:\n\n";
+        let totalPedido = 0;
+
+        carrito.forEach(p => {
+            const subtotal = p.precio * p.cantidad;
+            totalPedido += subtotal;
+
+            mensaje += `${p.cantidad}x ${p.nombre} — $${subtotal.toFixed(2)} MXN\n`;
+        });
+
+        mensaje += `\nTotal del pedido: $${totalPedido.toFixed(2)} MXN`;
+
+        const url = "https://wa.me/" + TELEFONO +
+            "?text=" + encodeURIComponent(mensaje);
+
+        window.open(url, "_blank");
+    }
+
+    function abrirImagen(ruta) {
+        document.getElementById("imagenAmpliada").src = ruta;
+        document.getElementById("cajaImagen").style.display = "flex";
+        document.body.style.overflow = "hidden";
+    }
+
+    function cerrarImagen() {
+        document.getElementById("cajaImagen").style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    actualizarResumen();
+</script>
+
+</body>
+</html>
+
+
